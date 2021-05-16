@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Poppins', sans-serif;
+            margin:0;
+            color: white;
+        }
+        .app{
+    background: #4F4F4F;
+    width: 330px;
+    margin: 3rem auto;
+    border: 1px solid gray;
+        }
+        .top{
+            padding: 1rem;
+        }
+.video-wrap{
+    width: 100%;
+    padding-top: 60%; /* 1:1 Aspect Ratio */
+    position: relative; 
+    border: 1px solid #FFFFFF;
+}
+.video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #4F4F4F
+}
+.top p{
+    font: normal normal 600 12px/18px Poppins;
+    letter-spacing: 0.14px;
+    margin: 0 0 0 .75rem ;
+}
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="top">
+            <span class="material-icons">
+                chevron_left
+            </span>
+            <p>Episode 001</p>
+            <p>The Lone Cyborg</p>
+        </div>
+        <div class="video-wrap">
+            <div class="video">
+                <img src="play.png" alt="">
+            </div>
+        </div>
+        <p style="font: normal normal 600 12px/18px Poppins;
+        letter-spacing: 0.14px;padding: 0 1rem;
+display: flex;">Season 01<span class="material-icons" style="margin-top: -.2rem;">keyboard_arrow_down</span></p>
+        <div class="box-vid" style="display: flex;padding: .5rem 1rem; ">
+            <div class="vid-left" style="width: 109px;
+            height: 72px;background: #FFFFFF; margin-right: 1rem;">
+
+            </div>
+            <div class="vid-right" style="position: relative;">
+                <span style="font: normal normal 600 8px/12px Poppins;
+                letter-spacing: 0.1px;">Episode 001</span>
+                <p style="font: normal normal 600 12px/18px Poppins;
+                letter-spacing: 0.14px;">The Lone Cyborg</p>
+                <span style="font: normal normal 600 8px/12px Poppins;
+                letter-spacing: 0.1px; position: absolute;top: .2rem;right: .2rem;">26 m</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

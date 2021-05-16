@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding of Dimas & Wahyu</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=BioRhyme:wght@200;300;400;700;800&display=swap" rel="stylesheet"> 
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+        }
+        #main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            background: #c9ba9f;
+            width: 100%;
+            top: 0;
+            margin: 0;
+        }
+        .hidden {
+            display: none;
+        }
+        .visuallyhidden {
+            opacity: 0;
+        }
+        /* #myVideo{
+            width: 100%;
+        } */
+        .video-wrap{
+            position: fixed;
+            z-index: 0;
+            top: 0;
+            min-width: 100%;
+            height: 100vh;
+        }
+        .video-wrap video{
+            min-width: 100%;
+            min-height: 100%;
+        }
+        .fade {
+            opacity: 0;
+            transition: opacity 5s ease-in-out;
+            -moz-transition: opacity 5s ease-in-out;
+            -webkit-transition: opacity 5s ease-in-out;
+        }
+        @font-face {
+            font-family: 'Archer';
+            src: url('Archer.eot'); /* IE9 Compat Modes */
+            src: url('Archer.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+                url('Archer.woff') format('woff'), /* Modern Browsers */
+                url('ARCHER.TTF')  format('truetype'), /* Safari, Android, iOS */
+                url('Archer.svg#svgFontName') format('svg'); /* Legacy iOS */
+        }
+        .text{
+            font-family: 'BioRhyme', serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+    </div>
+    <!-- <div class="video-wrap">
+        <video autoplay muted loop id="myVideo">
+            <source src="cropped2.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div> -->
+    <div class="text">
+        hello
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vara@1.2.0/src/vara.min.js" type="text/javascript"></script>
+    <script>
+        // document.getElementById('myVideo').addEventListener('loadedmetadata', function() {
+        //     this.currentTime = 7;
+        // }, false);
+
+        // HANDWRITTING CODE
+        var vara = new Vara("#main","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Parisienne/Parisienne.json",[{
+                text:"The Wedding of Dimas & Wahyu"
+            }],{
+                fontSize:46,
+                color:"#554f43",
+                strokeWidth:.8,
+                textAlign:"center"
+            });
+            vara.animationEnd(function(i,o){
+                setTimeout(() => {
+                    document.getElementById('main').classList.add("fade")
+                }, 1000);
+            })
+
+        // DISMISSING COUNTDOWN
+        let box = document.getElementById('main')
+        function dismissable() {
+            if (box.classList.contains('hidden')) {
+            box.classList.remove('hidden');
+            setTimeout(function () {
+                box.classList.remove('visuallyhidden');
+            }, 20);
+            } else {
+            box.classList.add('visuallyhidden');    
+            box.addEventListener('transitionend', function(e) {
+                box.classList.add('hidden');
+            }, {
+                capture: false,
+                once: true,
+                passive: false
+            });
+            }
+        }
+    </script>
+</body>
+</html>
